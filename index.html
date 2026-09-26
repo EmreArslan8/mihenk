@@ -103,6 +103,31 @@
               </article>
             </div>
 
+            <div class="detail-grid">
+              <article class="panel channel-panel">
+                <div class="panel-head"><div><p>KANAL EKONOMİSİ</p><h2>Satıştan kalan gerçek pay</h2></div><button class="outline-btn" data-page-jump="profit">Detaylı kârlılık <span data-icon="arrow-right"></span></button></div>
+                <div class="channel-table-head"><span>KANAL</span><span>NET SATIŞ</span><span>KOMİSYON</span><span>NET KÂR</span><span>MARJ</span></div>
+                <div class="channel-detail-row">
+                  <div class="market-name"><span class="market-logo trendyol"><img src="/assets/trendyol-logo.svg" alt="Trendyol"></span><div><strong>Trendyol</strong><small>186 sipariş</small></div></div><strong>₺42.840</strong><span class="cost">−₺6.426</span><strong>₺9.782</strong><span class="margin-badge">%22,8</span>
+                </div>
+                <div class="channel-detail-row">
+                  <div class="market-name"><span class="market-logo"><img src="/assets/hepsiburada-logo.svg" alt="Hepsiburada"></span><div><strong>Hepsiburada</strong><small>98 sipariş</small></div></div><strong>₺24.180</strong><span class="cost">−₺3.385</span><strong>₺5.997</strong><span class="margin-badge">%24,8</span>
+                </div>
+                <div class="channel-detail-row">
+                  <div class="market-name"><span class="market-logo"><img src="/assets/woocommerce-logo.png" alt="WooCommerce"></span><div><strong>WooCommerce</strong><small>58 sipariş</small></div></div><strong>₺17.240</strong><span class="cost">−₺862</span><strong>₺5.707</strong><span class="margin-badge best">%33,1</span>
+                </div>
+              </article>
+
+              <article class="panel products-panel">
+                <div class="panel-head"><div><p>ÜRÜN PERFORMANSI</p><h2>Bugünün öne çıkanları</h2></div><button class="outline-btn" data-page-jump="inventory">Stoklara git <span data-icon="arrow-right"></span></button></div>
+                <div class="ranked-products">
+                  <button data-product="Airfryer XXL"><span class="rank">01</span><div><strong>Airfryer XXL</strong><small>AF-XL-001 · 42 adet</small></div><div class="product-result"><strong>₺205.758</strong><small>%28,4 marj</small></div></button>
+                  <button data-product="Kablosuz Süpürge"><span class="rank">02</span><div><strong>Kablosuz Süpürge</strong><small>KS-PRO-04 · 31 adet</small></div><div class="product-result"><strong>₺193.747</strong><small>%24,1 marj</small></div></button>
+                  <button data-product="Filtre Kahve Makinesi"><span class="rank">03</span><div><strong>Filtre Kahve Makinesi</strong><small>KM-120-B · 28 adet</small></div><div class="product-result"><strong>₺61.292</strong><small>%31,7 marj</small></div></button>
+                </div>
+              </article>
+            </div>
+
             <article class="panel orders-panel">
               <div class="panel-head"><div><p>SON HAREKETLER</p><h2>Yeni siparişler</h2></div><button class="outline-btn" data-page-jump="orders">Tüm siparişler <span data-icon="arrow-right"></span></button></div>
               <div class="table-wrap"><table><thead><tr><th>SİPARİŞ</th><th>KANAL</th><th>MÜŞTERİ</th><th>ÜRÜN</th><th>TUTAR</th><th>DURUM</th><th></th></tr></thead><tbody id="orderRows"></tbody></table></div>
@@ -112,6 +137,11 @@
           <section id="genericPage" class="page">
             <div class="generic-toolbar"><div class="filter-tabs" id="filterTabs"></div><button class="primary-btn" id="pageAction">+ Yeni kayıt</button></div>
             <div id="genericContent"></div>
+          </section>
+
+          <section id="detailPage" class="page">
+            <button class="back-button" id="backFromDetail" aria-label="Önceki sayfaya geri dön"><span data-icon="arrow-left"></span> Geri dön</button>
+            <div id="detailContent"></div>
           </section>
         </div>
       </main>
