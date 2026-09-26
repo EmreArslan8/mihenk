@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Çok kanallı e-ticaret operasyon yönetimi demo paneli" />
+    <title>Mihenk — Ticaret Merkezi</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2216%22 fill=%22%232563eb%22/><path d=%22M17 39V27h7v12zm12 0V17h7v22zm12 0V23h7v16z%22 fill=%22white%22/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true"><span data-icon="chart"></span></div>
+          <div><strong>mihenk</strong><small>ticaret merkezi</small></div>
+        </div>
+
+        <nav class="main-nav" aria-label="Ana menü">
+          <p>ÇALIŞMA ALANI</p>
+          <button class="nav-item active" data-page="overview"><span class="nav-icon" data-icon="layout"></span>Genel bakış</button>
+          <button class="nav-item" data-page="orders"><span class="nav-icon" data-icon="cart"></span>Siparişler <b>24</b></button>
+          <button class="nav-item" data-page="inventory"><span class="nav-icon" data-icon="package"></span>Ürün & stok</button>
+          <button class="nav-item" data-page="profit"><span class="nav-icon" data-icon="trending-up"></span>Kârlılık</button>
+          <button class="nav-item" data-page="integrations"><span class="nav-icon" data-icon="plug"></span>Entegrasyonlar <i></i></button>
+          <p>YÖNETİM</p>
+          <button class="nav-item" data-page="reports"><span class="nav-icon" data-icon="file-chart"></span>Raporlar</button>
+          <button class="nav-item" data-page="settings"><span class="nav-icon" data-icon="settings"></span>Ayarlar</button>
+        </nav>
+
+        <div class="sync-card">
+          <div><span class="pulse"></span><strong>Sistem sağlıklı</strong></div>
+          <p>3 kanal bağlı<br>Son senkron 2 dk önce</p>
+          <button id="syncSide">Şimdi senkronize et</button>
+        </div>
+
+        <div class="profile">
+          <div class="avatar">EA</div>
+          <div><strong>Emre Arslan</strong><small>Yönetici</small></div>
+          <button aria-label="Profil menüsü"><span data-icon="more"></span></button>
+        </div>
+      </aside>
+
+      <main>
+        <header class="topbar">
+          <button class="mobile-menu" aria-label="Menüyü aç"><span data-icon="menu"></span></button>
+          <label class="search"><span data-icon="search"></span><input id="globalSearch" type="search" placeholder="Sipariş, ürün veya SKU ara..." /><kbd>⌘ K</kbd></label>
+          <div class="top-actions">
+            <button class="icon-btn" id="notificationBtn" aria-label="Bildirimler"><span data-icon="bell"></span><i></i></button>
+            <button class="primary-btn" id="syncTop"><span data-icon="refresh"></span> Verileri yenile</button>
+          </div>
+        </header>
+
+        <div class="page-wrap">
+          <section class="page-head">
+            <div><p class="eyebrow">26 EYLÜL 2026 · CUMARTESİ</p><h1 id="pageTitle">İşler nasıl gidiyor?</h1><p id="pageSubtitle">Tüm satış kanallarınızın bugünkü özeti.</p></div>
+            <div class="date-filter"><button class="active">Bugün</button><button>7 gün</button><button>30 gün</button><button class="calendar-btn" aria-label="Tarih seç"><span data-icon="calendar"></span></button></div>
+          </section>
+
+          <section id="overviewPage" class="page active-page">
+            <div class="metrics-grid">
+              <article class="metric-card featured">
+                <div class="metric-top"><span>NET SATIŞ</span><div class="mini-icon"><span data-icon="wallet"></span></div></div>
+                <strong>₺84.260</strong><div class="metric-foot"><span class="up">↑ %18,4</span><small>düne göre</small></div>
+                <svg class="spark" viewBox="0 0 220 45" preserveAspectRatio="none"><path d="M0,36 C26,38 23,20 50,26 S83,34 104,17 S139,28 157,14 S190,21 220,4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M0,36 C26,38 23,20 50,26 S83,34 104,17 S139,28 157,14 S190,21 220,4 V45 H0Z" fill="url(#fade)"/><defs><linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d4ff74" stop-opacity=".28"/><stop offset="1" stop-color="#d4ff74" stop-opacity="0"/></linearGradient></defs></svg>
+              </article>
+              <article class="metric-card"><div class="metric-top"><span>SİPARİŞLER</span><div class="mini-icon"><span data-icon="shopping-bag"></span></div></div><strong>342</strong><div class="metric-foot"><span class="up light">↑ %12,8</span><small>39 sipariş artış</small></div><div class="micro-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+              <article class="metric-card"><div class="metric-top"><span>NET KÂR</span><div class="mini-icon"><span data-icon="trending-up"></span></div></div><strong>₺21.486</strong><div class="metric-foot"><span class="up light">↑ %6,2</span><small>%25,5 marj</small></div><div class="profit-ring"><span>%25</span></div></article>
+              <article class="metric-card warning-card"><div class="metric-top"><span>AKSİYON GEREKİYOR</span><div class="mini-icon"><span data-icon="alert"></span></div></div><strong>17</strong><div class="metric-foot"><span>8 kritik stok</span><small>9 sipariş gecikiyor</small></div><button data-page-jump="inventory">Detayları gör →</button></article>
+            </div>
+
+            <div class="content-grid">
+              <article class="panel sales-panel">
+                <div class="panel-head"><div><p>SATIŞ PERFORMANSI</p><h2>Kanallar birlikte büyüyor</h2></div><div class="legend"><span><i class="ty"></i>Trendyol</span><span><i class="hb"></i>Hepsiburada</span><span><i class="wc"></i>Web sitesi</span></div></div>
+                <div class="chart-area">
+                  <div class="axis"><span>₺16B</span><span>₺12B</span><span>₺8B</span><span>₺4B</span><span>₺0</span></div>
+                  <div class="chart">
+                    <div class="grid-lines"><i></i><i></i><i></i><i></i><i></i></div>
+                    <div class="bar-group"><div><b style="--h:48%"></b><b style="--h:35%"></b><b style="--h:25%"></b></div><small>Pzt</small></div>
+                    <div class="bar-group"><div><b style="--h:58%"></b><b style="--h:42%"></b><b style="--h:31%"></b></div><small>Sal</small></div>
+                    <div class="bar-group"><div><b style="--h:52%"></b><b style="--h:48%"></b><b style="--h:34%"></b></div><small>Çar</small></div>
+                    <div class="bar-group"><div><b style="--h:70%"></b><b style="--h:51%"></b><b style="--h:42%"></b></div><small>Per</small></div>
+                    <div class="bar-group"><div><b style="--h:66%"></b><b style="--h:62%"></b><b style="--h:43%"></b></div><small>Cum</small></div>
+                    <div class="bar-group current"><div><b style="--h:91%"></b><b style="--h:70%"></b><b style="--h:56%"></b></div><small>Bugün</small></div>
+                    <div class="bar-group muted"><div><b style="--h:26%"></b><b style="--h:17%"></b><b style="--h:12%"></b></div><small>Paz</small></div>
+                  </div>
+                </div>
+                <div class="channel-summary"><div><span>Toplam satış</span><strong>₺408.720</strong></div><div><span>Ortalama sepet</span><strong>₺246,38</strong></div><div><span>İade oranı</span><strong>%2,4</strong></div></div>
+              </article>
+
+              <article class="panel alerts-panel">
+                <div class="panel-head"><div><p>AKIŞ</p><h2>Dikkat isteyenler</h2></div><button>17 bildirim</button></div>
+                <div class="alert-list">
+                  <button class="alert-item" data-page-jump="inventory"><span class="alert-icon red" data-icon="package-x"></span><div><strong>8 ürün kritik stokta</strong><small>3 ürün bugün tükenebilir</small></div><time>Şimdi</time></button>
+                  <button class="alert-item" data-page-jump="orders"><span class="alert-icon amber" data-icon="clock"></span><div><strong>9 sipariş gecikiyor</strong><small>Kargoya teslim süresi aşıldı</small></div><time>12 dk</time></button>
+                  <button class="alert-item" data-page-jump="integrations"><span class="alert-icon blue" data-icon="refresh"></span><div><strong>Hepsiburada güncellendi</strong><small>124 ürün başarıyla eşitlendi</small></div><time>28 dk</time></button>
+                  <button class="alert-item" data-page-jump="profit"><span class="alert-icon green" data-icon="trending-up"></span><div><strong>Kâr marjı yükseldi</strong><small>Web sitesi satışlarında +%4,2</small></div><time>1 sa</time></button>
+                </div>
+                <button class="text-link" id="allNotifications">Tüm bildirimleri görüntüle →</button>
+              </article>
+            </div>
+
+            <article class="panel orders-panel">
+              <div class="panel-head"><div><p>SON HAREKETLER</p><h2>Yeni siparişler</h2></div><button class="outline-btn" data-page-jump="orders">Tüm siparişler <span data-icon="arrow-right"></span></button></div>
+              <div class="table-wrap"><table><thead><tr><th>SİPARİŞ</th><th>KANAL</th><th>MÜŞTERİ</th><th>ÜRÜN</th><th>TUTAR</th><th>DURUM</th><th></th></tr></thead><tbody id="orderRows"></tbody></table></div>
+            </article>
+          </section>
+
+          <section id="genericPage" class="page">
+            <div class="generic-toolbar"><div class="filter-tabs" id="filterTabs"></div><button class="primary-btn" id="pageAction">+ Yeni kayıt</button></div>
+            <div id="genericContent"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <div class="drawer" id="notificationDrawer" aria-hidden="true"><div class="drawer-head"><div><p>MERKEZ</p><h2>Bildirimler</h2></div><button id="closeDrawer" aria-label="Kapat"><span data-icon="x"></span></button></div><div class="drawer-body"><div class="notice urgent"><span>Stok</span><strong>3 ürün bugün tükenebilir.</strong><small>Satış hızına göre hesaplandı · şimdi</small></div><div class="notice"><span>Sipariş</span><strong>#TY-18492 kargo süresini aştı.</strong><small>Operasyon ekibine atandı · 12 dk</small></div><div class="notice"><span>Sistem</span><strong>Tüm kanallar başarıyla eşitlendi.</strong><small>342 sipariş kontrol edildi · 28 dk</small></div></div></div>
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <div class="period-menu" id="periodMenu" aria-hidden="true">
+      <p>HAZIR DÖNEMLER</p>
+      <button data-period="january"><span>Ocak 2026</span><small>01–31 Ocak</small></button>
+      <button data-period="august"><span>Ağustos 2026</span><small>01–31 Ağustos</small></button>
+      <button data-period="september"><span>Eylül 2026</span><small>01–26 Eylül</small></button>
+    </div>
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <section class="action-modal" id="actionModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head"><div><p>HIZLI İŞLEM</p><h2 id="modalTitle">Yeni kayıt</h2></div><button id="closeModal" aria-label="Kapat"><span data-icon="x"></span></button></div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-actions"><button class="outline-btn" id="cancelModal">Vazgeç</button><button class="primary-btn" id="confirmModal">Kaydet</button></div>
+    </section>
+    <div class="toast" id="toast"><span>✓</span><div><strong>Senkronizasyon başladı</strong><small>Veriler arka planda güncelleniyor.</small></div></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

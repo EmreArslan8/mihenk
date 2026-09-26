@@ -1,0 +1,27 @@
+# Bağımlılıklar
+node_modules/
+
+# Loglar
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Ortam değişkenleri
+.env
+.env.*
+!.env.example
+
+# Build / cache
+dist/
+build/
+.cache/
+coverage/
+
+# İşletim sistemi / editör
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
